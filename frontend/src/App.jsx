@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL
-})
+
 function App() {
+  const api = axios.create({
+        baseURL: import.meta.env.VITE_API_URL
+        })
   const [message, setMessage] = useState('Chargement application Moderne ...')
   
 
