@@ -3,7 +3,7 @@ const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL
 })
 function App() {
-  const [message, setMessage] = useState('Chargement de l'application ...')
+  const [message, setMessage] = useState('Chargement application Moderne ...')
   
 
   useEffect(() => {
