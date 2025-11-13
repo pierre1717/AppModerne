@@ -1,7 +1,16 @@
+# Étape 1 : Build du frontend
+FROM node:18 AS build
+
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
+# Étape 2 : Serveur de production
 FROM node:18-alpine
 WORKDIR /app
-COPY . .
-RUN npm install
-RUN npm run build
+RUN npm install -g serve
+COPY --from=build /app/dist ./dist
 EXPOSE 3000
-CMD ["npm", "run", "preview"]
+CMD ["serve", "-s", "dist", "-l", "3000"]
