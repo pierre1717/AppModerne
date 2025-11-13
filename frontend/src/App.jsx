@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 
 function App() {
   const [message, setMessage] = useState('Chargement de l'application ...')
+  const api = axios.create({
+  baseURL: import.meta.env.VITE_API_URL
+})
 
   useEffect(() => {
     fetch('/api/hello')
