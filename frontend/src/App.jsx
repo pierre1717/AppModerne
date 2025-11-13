@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 function App() {
-  const [message, setMessage] = useState('Chargement de l'application React +GO +')
+  const [message, setMessage] = useState('Chargement de l'application ...')
 
   useEffect(() => {
     fetch('/api/hello')
